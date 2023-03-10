@@ -10,13 +10,13 @@ body {
 }
 
 .accordion>p {
-    text-align: center;
+    text-align: start;
     font-size: 45px;
     font-weight: 900;
 }
 
 .container {
-    max-width: 80%;
+    max-width: 70%;
     margin: auto;
 }
 
@@ -29,19 +29,21 @@ body {
 
 .tab input,
 .img {
-    display: none;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    opacity: 0;
+
 }
 
 .tab {
     border-top: solid 2px rgba(204, 207, 209, 0.3);
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .title {
     display: flex;
     justify-content: space-between;
-    position: relative;
+
 }
 
 .title::after {
@@ -53,5 +55,10 @@ body {
 }
 
 .tab :checked~.img {
-    display: block;
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+
 }
+
+@media (max-width: 550px) {}
