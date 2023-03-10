@@ -1,0 +1,57 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 243, 242);
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.accordion>p {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.imgDiv {
+    width: 430px;
+    height: 350px;
+    display: block;
+    margin: 20px auto 20px auto;
+}
+
+.tab input,
+.img {
+    display: none;
+}
+
+.tab {
+    border-top: solid 2px rgba(204, 207, 209, 0.3);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.title::after {
+    content: "+";
+}
+
+.tab :checked+.title::after {
+    content: "x";
+}
+
+.tab :checked~.img {
+    display: block;
+}
