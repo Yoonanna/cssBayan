@@ -7,12 +7,16 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-weight: 500;
+    color: blue;
 }
 
 .accordion>p {
     text-align: start;
     font-size: 45px;
     font-weight: 900;
+    color: black;
+
+    margin: 10px;
 }
 
 .container {
@@ -30,7 +34,7 @@ body {
 .tab input,
 .img {
     visibility: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     height: 0;
     opacity: 0;
 
@@ -43,15 +47,12 @@ body {
 .title {
     display: flex;
     justify-content: space-between;
-
 }
 
-.title::after {
-    content: "+";
-}
+.title p,
+.rotate {
 
-.tab :checked+.title::after {
-    content: "x";
+    margin: 0;
 }
 
 .tab :checked~.img {
@@ -59,6 +60,41 @@ body {
     height: auto;
     opacity: 1;
 
+}
+
+.tab :checked~.title .rotate {
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.tab :hover~.img {
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+
+}
+
+.tab :checked~.title {
+    color: black;
+}
+
+.tab :hover~.title,
+.tab :active~.title {
+    color: black;
+}
+
+
+.tab :hover~.title .rotate {
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 @media (max-width: 550px) {}
