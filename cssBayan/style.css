@@ -1,0 +1,157 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 243, 242);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: blue;
+    max-height: 568px;
+}
+
+.accordion>p {
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: black;
+    margin: 0.6rem;
+}
+
+.container {
+    max-width: 70%;
+    margin: auto;
+
+}
+
+.imgDiv {
+    width: 13rem;
+    height: 10rem;
+    display: block;
+    margin: 1rem auto 1rem auto;
+}
+
+.tab input,
+.img {
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    height: 0;
+    opacity: 0;
+
+}
+
+.tab {
+    border-top: solid 2px rgba(204, 207, 209, 0.3);
+
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.title p,
+.rotate {
+
+    margin: 0;
+}
+
+.rotate {
+    visibility: visible;
+}
+
+.tab :checked~.title {
+    color: black;
+}
+
+.tab :checked~.img {
+    cursor: pointer;
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+
+}
+
+.tab :checked~.title .rotate {
+
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 1.5rem;
+        max-height: 1180px;
+    }
+
+    .accordion>p {
+
+        font-size: 2.5rem;
+    }
+
+    .imgDiv {
+        width: 24rem;
+        height: 18rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 4rem;
+        max-height: 1080px;
+    }
+
+    .accordion>p {
+
+        font-size: 5rem;
+    }
+
+    .imgDiv {
+        width: 37rem;
+        height: 35rem;
+    }
+}
+
+@media screen and (hover: hover) {
+    .rotate {
+        visibility: hidden;
+    }
+
+    .tab :checked~.img,
+    .tab :hover~.img {
+        cursor: pointer;
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+
+    }
+
+    .accordion:hover>.tab>.title,
+    .accordion:hover>.tab>.title>.rotate {
+        visibility: visible;
+        color: black;
+        cursor: pointer;
+    }
+
+    .tab :hover~.title .rotate {
+
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .tab :checked~.title .rotate {
+
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .tab :active~.title>p,
+    .tab :active~.img {
+        color: blue;
+        opacity: 0.5;
+    }
+
+}
