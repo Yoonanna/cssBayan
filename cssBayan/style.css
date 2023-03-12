@@ -24,6 +24,16 @@ body {
     margin: auto;
 }
 
+.rotate {
+    visibility: hidden;
+}
+
+.accordion:hover>.tab>.title,
+.accordion:hover>.tab>.title>.rotate {
+    visibility: visible;
+    color: black;
+}
+
 .imgDiv {
     width: 430px;
     height: 350px;
@@ -65,9 +75,6 @@ body {
 .tab :checked~.title .rotate {
 
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
@@ -78,22 +85,19 @@ body {
 
 }
 
+.tab :active~.title>p,
+.tab :active~.img {
+    color: blue;
+    opacity: 0.5;
+}
+
 .tab :checked~.title {
     color: black;
 }
 
-.tab :hover~.title,
-.tab :active~.title {
-    color: black;
-}
-
-
 .tab :hover~.title .rotate {
 
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
